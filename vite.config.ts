@@ -6,8 +6,8 @@ export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
 
     return {
-      // REQUIRED FOR GITHUB PAGES
-      base: "/Prompt-Master/",   // <-- your repo name here
+      
+      base: "/Prompt-Master/",   
 
       server: {
         port: 3000,
@@ -16,7 +16,6 @@ export default defineConfig(({ mode }) => {
 
       plugins: [react()],
 
-      // YOUR GEMINI API KEY INJECTION (kept exactly as you wrote)
       define: {
         'process.env.API_KEY': JSON.stringify(env.VITE_GEMINI_API_KEY),
         'process.env.GEMINI_API_KEY': JSON.stringify(env.VITE_GEMINI_API_KEY)
